@@ -1,34 +1,44 @@
 public class Car {
-    private int carID;
-    private String carName;
+    private int plateNumber;
+    private float xLocation;
+    private float yLocation;
+    private float speed;
 
-    public Car(){
-        carID = 0;
-        carName = "No name";
-    }
-    public  Car(int carID,String carName){
-        this.carID = carID;
-        this.carName = carName;
+    public int getPlateNumber() {
+        return plateNumber;
     }
 
-    public int getCarID() {
-        return carID;
+    public void setPlateNumber(int plateNumber) {
+        this.plateNumber = plateNumber;
     }
 
-    public void setCarID(int carID) {
-        this.carID = carID;
+    public float getxLocation() {
+        return xLocation;
     }
 
-    public String getCarName() {
-        return carName;
+    public void setxLocation(float xLocation) {
+        this.xLocation = xLocation;
     }
 
-    public void setCarName(String carName) {
-        this.carName = carName;
+    public float getyLocation() {
+        return yLocation;
     }
 
-    public  void displayCar(){
-        System.out.println("ID Car " + carID );
-        System.out.println("ID Name " + carName );
+    public void setyLocation(float yLocation) {
+        this.yLocation = yLocation;
     }
+
+    public float getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(float speed) {
+        this.speed = speed;
+    }
+
+    public  void  move(float xLocation,float yLocation){
+        this.xLocation = xLocation;
+        this.yLocation = yLocation;
+    }
+
 }
