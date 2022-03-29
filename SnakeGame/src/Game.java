@@ -14,15 +14,19 @@ public class Game{
     public  static int point = 0;
     public void StartGame() {
         f.setSize(615, 630);
+        f.setTitle("Snake Game");
         f.setVisible(true);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.add(Game.draw);
         f.addKeyListener(keyListenerEven);
         snakes.add(new Snake(6,6));
         snakes.add(new Snake(5,6));
         snakes.add(new Snake(4,6));
-        f.add(draw);
-
+//        f.add(draw);
         Snake.snakeMove();
 
+
     }
+
 
 }

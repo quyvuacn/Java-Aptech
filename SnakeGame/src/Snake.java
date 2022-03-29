@@ -1,4 +1,4 @@
-import java.util.*;
+import java.awt.*;
 
 public class Snake {
     private int dot_x;
@@ -46,7 +46,6 @@ public class Snake {
             Snake.checkSnake_1();
             Snake.checkSnake_2();
             Snake.checkFood();
-            Game.f.add(Game.draw);
             Game.KeyCodeOld = 39;
         }
     }
@@ -59,7 +58,6 @@ public class Snake {
             Snake.checkSnake_1();
             Snake.checkSnake_2();
             Snake.checkFood();
-            Game.f.add(Game.draw);
             Game.KeyCodeOld = 37;
         }
     }
@@ -72,7 +70,6 @@ public class Snake {
             Snake.checkSnake_1();
             Snake.checkSnake_2();
             Snake.checkFood();
-            Game.f.add(Game.draw);
             Game.KeyCodeOld = 40;
         }
     }
@@ -86,11 +83,10 @@ public class Snake {
                 Snake.checkSnake_1();
                 Snake.checkSnake_2();
                 Snake.checkFood();
-                Game.f.add(Game.draw);
                 Game.KeyCodeOld = 38;
             }
     }
-//Check sống chết của rẳn
+
     public static  boolean checkSnake_1(){
         for (int i=1;i<Game.snakes.size();i++){
             if(Game.snakes.get(0).getDot_x()==Game.snakes.get(i).getDot_x()
@@ -111,9 +107,15 @@ public class Snake {
         }else if(Game.snakes.get(0).getDot_x()<0){
             Game.snakes.get(0).setDot_x(13);
         }
+        try {
+            Thread.sleep(20);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Game.f.add(Game.draw);
     }
 
-//Check ran an moi
+
     public static void checkFood(){
         if(Game.food.getFood()[0]==Game.snakes.get(0).getDot()[0] && Game.food.getFood()[1]==Game.snakes.get(0).getDot()[1]){
             Game.snakes.add(new Snake(-100,-100));

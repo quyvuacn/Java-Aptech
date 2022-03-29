@@ -1,17 +1,12 @@
-
 import java.awt.*;
 import java.util.ArrayList;
-
-
-
-import javax.swing.JFrame;
 
 public class Draw extends  Canvas{
 
     public void paint(Graphics g) {
         setBackground(Color.WHITE);
         g.setColor(Color.WHITE);
-        g.clearRect(0,0,615,630);
+        g.fillRect(0,0,620,630);
         g.setColor(Color.BLACK);
 
         g.drawLine(20,20,580,20);
