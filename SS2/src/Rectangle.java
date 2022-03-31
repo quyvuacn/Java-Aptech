@@ -1,4 +1,5 @@
 public class Rectangle {
+    
     private float width;
     private float length;
 
@@ -30,8 +31,12 @@ public class Rectangle {
     public double getArea(){
         return length*width;
     }
+    private double getNua(){
+        return length+width;
+    }
+
     public double getPerimetere(){
-        return 2*(length+width);
+        return 2*this.getNua();
     }
     public String toString(){
        return  "Rectangle[width = " + width + ",length = " + length +" ]" ;

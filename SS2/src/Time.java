@@ -35,7 +35,7 @@ public class Time {
 
     @Override
     public String toString() {
-        return hour + "/" + minute + "/" + second ;
+        return hour + "/" + minute + "/" + second  ;
     }
     public Time nextSecond(){
         if(second<59){
@@ -75,8 +75,8 @@ public class Time {
     }
 
     public static void main(String[] args) {
-        Time time1 = new Time(0,0,0);
-        Time time2 = new Time(0,0,0);
+        Time time1 = new Time(7,0,0);
+        Time time2 = new Time(6,59,59);
         System.out.println(time1.previousSecond());
         System.out.println(time2.nextSecond());
     }
