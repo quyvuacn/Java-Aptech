@@ -10,9 +10,10 @@ public class Date {
 
         if(!(this.day>=1&&this.day<=31) || !(this.month>=1&&this.month<=12) || !(this.year>=1900&&this.year<=9999)){
             System.out.println("No input validation needed.\n");
-            this.day = 1;
-            this.month = 1;
-            this.year = 1900;
+        }else {
+            this.day = day;
+            this.month = month;
+            this.year = year;
         }
     }
 

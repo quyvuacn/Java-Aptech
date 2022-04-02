@@ -4,14 +4,16 @@ public class Time {
     private int second;
 
     public Time(int hour, int minute, int second) {
-        this.hour = hour;
-        this.minute = minute;
-        this.second = second;
+
         if(!(this.second>=0&&this.second<=59) || !(this.minute>=0&&this.minute<=59) || !(this.hour>=0&&this.hour<=23)){
             System.out.println("No input validation needed.\n");
             this.second = 0;
             this.minute = 0;
             this.hour = 0;
+        }else {
+            this.hour = hour;
+            this.minute = minute;
+            this.second = second;
         }
     }
 
