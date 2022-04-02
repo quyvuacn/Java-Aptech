@@ -1,17 +1,35 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+
 public class Date {
     private int day;
     private int month;
     private int year;
 
     public Date(int day, int month, int year) {
-
-        if(!(this.day>=1&&this.day<=31 && this.month>=1&&this.month<=12 && this.year>=1900&&this.year<=9999)){
-            System.out.println("No input validation needed.\n");
+        if(!(day>=1&&day<=31 &&month>=1&&month<=12 && year>=1900&&year<=9999 && CheckCalendar(day,month,year) ) ){
+            System.out.println( day+"/"+month+"/"+year+": "+"No input validation needed.\n");
         }else {
             this.day = day;
             this.month = month;
             this.year = year;
         }
+    }
+
+    public boolean CheckCalendar(int day,int month,int year)  {
+        String dateString = day+"-"+month+"-"+year;
+        SimpleDateFormat  calendar = new SimpleDateFormat("dd-MM-yyyy");
+       calendar.setLenient(false);
+
+        try {
+            calendar.parse(dateString);//Nếu định dạng ngày sai sẽ bắn ra lỗi
+            return true;
+        }
+        catch (ParseException e) {
+            return false; // Có lỗi thì trả về định dạng ngày giờ sai
+        }
+
     }
 
     public int getDay() {
@@ -39,7 +57,7 @@ public class Date {
     }
 
     public String toString() {
-        String day="",month="";
+        String day="",month="",year="";
 
         if (this.day<10){
             day = "0"+this.day;
@@ -51,13 +69,20 @@ public class Date {
         } else {
             month = ""+this.month;
         }
+        if (this.year<10){
+            year = "0"+this.year;
+        } else {
+            year = ""+this.year;
+        }
 
         return day+"/"+month+"/"+year;
     }
 
     public static void main(String[] args) {
-        Date date = new Date(1,1,1888);
-        System.out.println(date);
+        Date date = new Date(30,2,2000);
+        Date date1 = new Date(5,4,2022);
+
+
     }
 
 

@@ -5,7 +5,8 @@ public class Time {
 
     public Time(int hour, int minute, int second) {
 
-        if(!(this.second>=0&&this.second<=59) || !(this.minute>=0&&this.minute<=59) || !(this.hour>=0&&this.hour<=23)){
+        if(!(minute >= 0 && minute <= 59) || !(hour >= 0 && hour <= 23)){
+
             System.out.println("No input validation needed.\n");
             this.second = 0;
             this.minute = 0;
@@ -100,7 +101,7 @@ public class Time {
     }
 
     public static void main(String[] args) {
-        Time time1 = new Time(7,0,0);
+        Time time1 = new Time(7,60,0);
         Time time2 = new Time(6,59,59);
         System.out.println(time1.previousSecond());
         System.out.println(time2.nextSecond());

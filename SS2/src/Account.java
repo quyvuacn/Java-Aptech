@@ -25,10 +25,6 @@ public class Account {
         return name;
     }
 
-    public void setBalance(int balance) {
-        this.balance = balance;
-    }
-
     public int getBalance() {
         return balance;
     }
