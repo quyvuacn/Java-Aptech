@@ -45,9 +45,13 @@ public class Date {
 
         if (this.day<10){
             day = "0"+this.day;
+        } else {
+            day = ""+this.day;
         }
         if (this.month<10){
             month = "0"+this.month;
+        } else {
+            month = ""+this.month;
         }
 
         return day+"/"+month+"/"+year;

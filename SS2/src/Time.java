@@ -41,6 +41,23 @@ public class Time {
 
     @Override
     public String toString() {
+        String second="",minute="",hour="";
+
+        if (this.second<10){
+            second = "0"+this.second;
+        } else {
+            second = ""+this.second;
+        }
+        if (this.minute<10){
+            minute = "0"+this.minute;
+        } else {
+            minute = ""+this.minute;
+        }
+        if (this.hour<10){
+            hour = "0"+this.hour;
+        } else {
+            hour = ""+this.hour;
+        }
         return hour + "/" + minute + "/" + second  ;
     }
     public Time nextSecond(){
