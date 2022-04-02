@@ -38,6 +38,13 @@ public class Employee {
     public int getSalary() {
         return salary;
     }
+    public String getName(){
+        return firstName + " " + lastName;
+    }
+
+    public int getAnnualSalary(){
+        return salary*12;
+    }
 
     public void setSalary(int salary) {
         this.salary = salary;

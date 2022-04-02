@@ -7,6 +7,12 @@ public class Time {
         this.hour = hour;
         this.minute = minute;
         this.second = second;
+        if(!(this.second>=0&&this.second<=59) || !(this.minute>=0&&this.minute<=59) || !(this.hour>=0&&this.hour<=23)){
+            System.out.println("No input validation needed.\n");
+            this.second = 0;
+            this.minute = 0;
+            this.hour = 0;
+        }
     }
 
     public int getHour() {

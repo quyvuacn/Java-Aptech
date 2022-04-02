@@ -1,6 +1,7 @@
 package com.example.model;
 
 public class Person {
+    private int id;
     private String name;
     private  int age;
 
@@ -8,7 +9,8 @@ public class Person {
 
     }
 
-    public Person(String name,int age){
+    public Person(int id,String name,int age){
+        this.id = id;
         this.name = name;
         this.age= age;
     }
@@ -27,5 +29,13 @@ public class Person {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

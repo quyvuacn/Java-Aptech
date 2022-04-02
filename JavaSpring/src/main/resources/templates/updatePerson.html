@@ -9,32 +9,22 @@
 </head>
 <body>
 
-<a th:href="@{/AddPerson}" class="btn btn-outline-success">Add person</a>
+<form th:action="@{/UpdatePerson/{id}(id=${personForm.id})}" th:object ="${personForm}" method="PUT">
+    <div class="mb-3">
+        <label for="id" class="form-label">Name</label>
+        <input type="number" class="form-control" id="id" th:field="*{id}" disabled>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Name</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" th:field="*{name}">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Age</label>
+        <input type="number" class="form-control" id="exampleInputPassword1" th:field="*{age}">
+    </div>
 
-
-    <table class="table">
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th></th>
-            <th></th>
-        </tr>
-        <tr th:each="person: ${personList}" >
-            <td th:utext="${person.id}"></td>
-            <td th:utext="${person.name}"></td>
-            <td th:utext="${person.age}"></td>
-            <td><a th:href="@{/UpdatePerson/{id}(id=${person.id})}" class="btn btn-outline-primary" >Update</a></td>
-            <td><a th:href="@{/DeletePerson/{id}(id=${person.id})}" class="btn btn-outline-danger" >Delete</a></td>
-        </tr>
-
-
-    </table>
-
-
-
-
-
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 
 
 

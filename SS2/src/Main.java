@@ -4,5 +4,6 @@ public class Main {
         Rectangle hcn1 = new Rectangle();
 
         System.out.println(hcn1.getPerimetere());
+
     }
 }

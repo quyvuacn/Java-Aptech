@@ -1,5 +1,5 @@
 public class Rectangle {
-    
+
     private float width;
     private float length;
 
@@ -31,15 +31,17 @@ public class Rectangle {
     public double getArea(){
         return length*width;
     }
-    private double getNua(){
+
+    private double getHalf (){
         return length+width;
     }
 
     public double getPerimetere(){
-        return 2*this.getNua();
+        return 2*this.getHalf();
     }
+//toString trả về một chuỗi mô tả về đối tượng khi ta in ra đối tượng
     public String toString(){
-       return  "Rectangle[width = " + width + ",length = " + length +" ]" ;
+       return  "Rectangle[width = " + width + ",length = " + length +"]" ;
     }
 
 

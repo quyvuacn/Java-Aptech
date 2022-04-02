@@ -13,8 +13,8 @@ public class Controller {
 
     private static List<Person> personList = new ArrayList<Person>();
     static{
-        personList.add(new Person("Vu Viet Quy",20));
-        personList.add(new Person("Dang Kim Thi",40));
+        personList.add(new Person(1,"Vu Viet Quy",20));
+        personList.add(new Person(2,"Dang Kim Thi",40));
     }
 
 
@@ -37,6 +37,46 @@ public class Controller {
         personList.add(personForm);
         return "redirect:/PersonList";
     }
+
+    @RequestMapping(value = {"/UpdatePerson/{id}"},method = RequestMethod.GET)
+    public String  SaveAddPerson(Model model,@ModelAttribute("personForm") Person personForm,@PathVariable("id") int id){
+        for (Person item:personList) {
+            if(item.getId()==id){
+                personForm.setId(item.getId());
+                personForm.setName(item.getName());
+                personForm.setAge(item.getAge());
+            }
+        }
+        model.addAttribute("personForm",personForm);
+
+        return "updatePerson";
+    }
+    @RequestMapping(value = {"/UpdatePerson/{id}"},method = RequestMethod.PUT)
+    public String  UpdatePerson(Model model,@ModelAttribute("personForm") Person personForm,@PathVariable("id") int id){
+        for (Person item:personList) {
+            if(item.getId()==id){
+                item.setName(personForm.getName());
+                item.setAge(personForm.getAge() );
+            }
+        }
+
+        return "redirect:/PersonList";
+    }
+    @RequestMapping(value = {"/DeletePerson/{id}"})
+    public String  DeletePerson(Model model,@ModelAttribute("personForm") Person personForm,@PathVariable("id") int id){
+        for (Person item:personList) {
+            if(item.getId()==id){
+                personList.remove(item);
+            }
+        }
+
+        return "redirect:/PersonList";
+    }
+
+
+
+
+
 
 
     @RequestMapping("/")
