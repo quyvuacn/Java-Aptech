@@ -4,11 +4,8 @@ public class Date {
     private int year;
 
     public Date(int day, int month, int year) {
-        this.day = day;
-        this.month = month;
-        this.year = year;
 
-        if(!(this.day>=1&&this.day<=31) || !(this.month>=1&&this.month<=12) || !(this.year>=1900&&this.year<=9999)){
+        if(!(this.day>=1&&this.day<=31 && this.month>=1&&this.month<=12 && this.year>=1900&&this.year<=9999)){
             System.out.println("No input validation needed.\n");
         }else {
             this.day = day;
@@ -59,7 +56,7 @@ public class Date {
     }
 
     public static void main(String[] args) {
-        Date date = new Date(1,1,1999);
+        Date date = new Date(1,1,1888);
         System.out.println(date);
     }
 
