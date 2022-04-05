@@ -23,7 +23,11 @@ public class Time {
     }
 
     public void setHour(int hour) {
-        this.hour = hour;
+        if(hour>23 || hour<0){
+            System.out.println("Err");
+        }else {
+            this.hour = hour;
+        }
     }
 
     public int getMinute() {
@@ -31,7 +35,12 @@ public class Time {
     }
 
     public void setMinute(int minute) {
-        this.minute = minute;
+        if(minute>60 || minute<0){
+            System.out.println("Err");
+        }else {
+            this.minute = minute;
+        }
+
     }
 
     public int getSecond() {
@@ -39,29 +48,17 @@ public class Time {
     }
 
     public void setSecond(int second) {
-        this.second = second;
+        if(second>60 || second<0){
+            System.out.println("Err");
+        }else {
+            this.second = second;
+        }
+
     }
 
     @Override
     public String toString() {
-        String second="",minute="",hour="";
-
-        if (this.second<10){
-            second = "0"+this.second;
-        } else {
-            second = ""+this.second;
-        }
-        if (this.minute<10){
-            minute = "0"+this.minute;
-        } else {
-            minute = ""+this.minute;
-        }
-        if (this.hour<10){
-            hour = "0"+this.hour;
-        } else {
-            hour = ""+this.hour;
-        }
-        return hour + "/" + minute + "/" + second  ;
+        return String.format("%02d/%02d/%02d",hour,minute,second)  ;
     }
     public Time nextSecond(){
         if(second<59){

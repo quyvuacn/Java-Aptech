@@ -57,30 +57,15 @@ public class Date {
     }
 
     public String toString() {
-        String day="",month="",year="";
-
-        if (this.day<10){
-            day = "0"+this.day;
-        } else {
-            day = ""+this.day;
-        }
-        if (this.month<10){
-            month = "0"+this.month;
-        } else {
-            month = ""+this.month;
-        }
-        if (this.year<10){
-            year = "0"+this.year;
-        } else {
-            year = ""+this.year;
-        }
-
-        return day+"/"+month+"/"+year;
+        return String.format("%02d/%02d/%4d",day,month,year);
     }
 
     public static void main(String[] args) {
         Date date = new Date(30,2,2000);
         Date date1 = new Date(5,4,2022);
+        System.out.println(date1);
+
+        
 
 
     }
