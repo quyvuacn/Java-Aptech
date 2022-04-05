@@ -64,5 +64,13 @@ public class Account {
                 '}';
     }
 
+    public static void main(String[] args) {
+        Account acc1 = new Account("3693636888888","Vu Viet Quy",1000);
+        Account acc2 = new Account("1234567891011","Vu Viet Son",1000);
+        acc1.transferTo(acc2,100);
+        System.out.println(acc1);
+        System.out.println(acc2);
+    }
+
 
 }
