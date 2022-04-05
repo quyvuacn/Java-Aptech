@@ -41,11 +41,18 @@ public class Point {
     }
 
     public double distance(Point another){
-        return Math.abs(another.getX()-another.getY());
+        return Math.sqrt((x-another.x)*(x-another.x)+(y-another.y)*(y-another.y));
     }
 
     public double distance(){
         return Math.sqrt(x*x+y*y);
     }
 
+    @Override
+    public String toString() {
+        return "Point{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
 }
