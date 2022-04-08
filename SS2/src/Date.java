@@ -20,14 +20,14 @@ public class Date {
     public boolean CheckCalendar(int day,int month,int year)  {
         String dateString = day+"-"+month+"-"+year;
         SimpleDateFormat  calendar = new SimpleDateFormat("dd-MM-yyyy");
-       calendar.setLenient(false);
+        calendar.setLenient(false);
 
         try {
-            calendar.parse(dateString);//Nếu định dạng ngày sai sẽ bắn ra lỗi
+            calendar.parse(dateString);
             return true;
         }
         catch (ParseException e) {
-            return false; // Có lỗi thì trả về định dạng ngày giờ sai
+            return false;
         }
 
     }
