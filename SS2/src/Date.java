@@ -7,26 +7,31 @@ public class Date {
     private int month;
     private int year;
 
+    /**
+     * @param day
+     * @param month
+     * @param year
+     */
+
     public Date(int day, int month, int year) {
-        if(!(day>=1&&day<=31 &&month>=1&&month<=12 && year>=1900&&year<=9999 && CheckCalendar(day,month,year) ) ){
-            System.out.println( day+"/"+month+"/"+year+": "+"No input validation needed.\n");
-        }else {
+        if (!(day >= 1 && day <= 31 && month >= 1 && month <= 12 && year >= 1900 && year <= 9999 && CheckCalendar(day, month, year))) {
+            System.out.println(day + "/" + month + "/" + year + ": " + "No input validation needed.\n");
+        } else {
             this.day = day;
             this.month = month;
             this.year = year;
         }
     }
 
-    public boolean CheckCalendar(int day,int month,int year)  {
-        String dateString = day+"-"+month+"-"+year;
-        SimpleDateFormat  calendar = new SimpleDateFormat("dd-MM-yyyy");
+    public boolean CheckCalendar(int day, int month, int year) {
+        String dateString = day + "-" + month + "-" + year;
+        SimpleDateFormat calendar = new SimpleDateFormat("dd-MM-yyyy");
         calendar.setLenient(false);
 
         try {
             calendar.parse(dateString);
             return true;
-        }
-        catch (ParseException e) {
+        } catch (ParseException e) {
             return false;
         }
 
@@ -52,21 +57,19 @@ public class Date {
         return year;
     }
 
+
     public void setYear(int year) {
         this.year = year;
     }
 
     public String toString() {
-        return String.format("%02d/%02d/%4d",day,month,year);
+        return String.format("%02d/%02d/%4d", day, month, year);
     }
 
     public static void main(String[] args) {
-        Date date = new Date(30,2,2000);
-        Date date1 = new Date(5,4,2022);
+        Date date = new Date(30, 2, 2000);
+        Date date1 = new Date(5, 4, 2022);
         System.out.println(date1);
-
-        
-
 
     }
 
