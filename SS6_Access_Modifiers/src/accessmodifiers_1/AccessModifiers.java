@@ -4,7 +4,7 @@ public class AccessModifiers {
     public String _public ;
     protected String _protected;
     String _default;
-    private String _private ;
+    private String  _private ;
 
     public AccessModifiers() {
         this._private = "private";
