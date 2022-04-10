@@ -1,0 +1,4 @@
++) public : sử dụng muôn nơi
++) protected : sử dụng trong cùng package + quan hệ cha con
++) default : sử dụng trong cùng package
++) private : chỉ sử dụng trong nội bộ class
