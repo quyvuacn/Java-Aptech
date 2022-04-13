@@ -13,13 +13,15 @@ public class ex_instanceof {
         float a = 5.25f;
         int b = (int) a;
         System.out.println(b);
-
+        //5
         /**
          * upcast : c được ép ngầm định thành float và gán cho d.
          * Note : d chỉ gán cho giá trị của a khi ép kiểu, còn c vẫn không thay
          */
         int c =5;
         float d = c;
+        System.out.println(d);
+        //5.0
 
 
 
