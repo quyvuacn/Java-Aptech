@@ -1,9 +1,9 @@
-package ex_instanceof;
+package ex_up_down_casting;
 
 /*
 Author : Quy Vu
 */
-public class ex_instanceof {
+public class ex_up_down_casting {
     public static void main(String[] args) {
 
         /**
