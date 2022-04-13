@@ -1,4 +1,4 @@
-package up_down_casting;
+package up_down_casting_and_instanceof;
 
 /*
 Author : Quy Vu
