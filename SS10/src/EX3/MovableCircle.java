@@ -3,12 +3,12 @@ package EX3;
 /*
 Author : Quy Vu
 */
-public class MovableCircle extends MovablePoint{
+public class MovableCircle implements Movable {
     private int radius;
     private MovablePoint center;
 
     public MovableCircle(int x, int y, int xSpeed, int ySpeed,int radius) {
-        super(x, y, xSpeed, ySpeed);
+        center = new MovablePoint(x,y,xSpeed,ySpeed);
         this.radius = radius;
     }
 
@@ -17,10 +17,31 @@ public class MovableCircle extends MovablePoint{
         return "MovableCircle{" +
                 "radius=" + radius +
                 ", center=" + center +
-                ", x=" + x +
-                ", y=" + y +
-                ", xSpeed=" + xSpeed +
-                ", ySpeed=" + ySpeed +
+                ", x=" + center.x +
+                ", y=" + center.y +
+                ", xSpeed=" + center.xSpeed +
+                ", ySpeed=" + center.ySpeed +
                 '}';
     }
+
+    @Override
+    public void moveUp() {
+        center.y+=center.ySpeed;
+    }
+
+    @Override
+    public void moveDown() {
+        center.y-=center.ySpeed;
+    }
+
+    @Override
+    public void moveLeft() {
+        center.x-=center.xSpeed;
+    }
+
+    @Override
+    public void moveRight() {
+        center.x+=center.xSpeed;
+    }
+
 }
